@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" data-ng-app> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" data-ng-app> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" data-ng-app> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"><!--<![endif]-->
+<html class="no-js" data-ng-app><!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="style/main.css">
 
         <!--[if lt IE 9]>
@@ -17,7 +18,145 @@
         <![endif]-->
     </head>
     <body>
-        
+        <div id="wrapper">
+        	<header class="main">
+        		<span class="logo1">/</span><span class="logo2">/</span>
+        		<h1>Switch</h1>
+        		<span class="subHeading">Training</span>
+        	</header>
+        	<nav class="main" data-ng-controller="NavController">
+        		<ul>
+        			<li data-ng-click="nav('home')">Home</li>    
+        			<li data-ng-click="nav('services')">Services</li>
+        			<li data-ng-click="nav('about')">About</li>
+        			<li data-ng-click="nav('contact')">Contact</li>
+        		</ul>
+        	</nav>
+        	<div class="thumbMedium">
+        		<img src="http://images.sciencedaily.com/2011/02/110204130607-large.jpg" />
+        	</div>
+        	<div class="thumbMedium">
+        		<img src="http://mindfulmotionphysicaltherapy.com/wp-content/uploads/2012/05/1044720_com_replenishi.jpg" />      		
+        	</div>
+        	<div class="thumbLarge">
+        		<img src="http://arcsdsu.files.wordpress.com/2012/06/outdoor-bootcamp-photo5.jpg" />	
+        	</div>
+        	
+        	<section id="services" class="container" data-ng-controller="ServicesController">
+                <div class="titleContainer">
+                    <div class="title">
+                        <h2>Services</h2>
+                    </div>
+                 	<div class="description">
+            			<p>
+            				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            			</p>
+            		</div>
+                </div>
+        		<ul class="services">
+        			<li>
+        				<h3>Level one</h3>
+        				<p>
+        					orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        				</p>
+        				<span class="cta" data-ng-click="level('levelOne')">More</a>
+        			</li>
+        			<li>
+        				<h3>Level two</h3>
+        				<p>
+        					orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        				</p>
+        				<span class="cta" data-ng-click="level('levelTwo')">More</a>
+        			</li>
+        			<li>
+        				<h3>Level Three</h3>
+        				<p>
+        					orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        				</p>
+        				<span class="cta" data-ng-click="level('levelThree')">More</a>
+        			</li>
+        		</ul>
+        		<div id="levelsContainer">
+                    <div class="levelOne" id="levelOne" data-ng-show="levelOne">
+                        <h3>What We Do At Level One</h3>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p> 
+                        <span class="cta levelUp" data-ng-click="level('levelTwo')")>Too easy?</span>
+                    </div>
+                    <div class="levelTwo" id="levelTwo" data-ng-show="levelTwo">
+                        <h3>What We Do At Level Two</h3>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p> 
+                        <span class="cta levelDown" data-ng-click="level('levelOne')")>Too hard?</span>
+                        <span class="cta levelUp" data-ng-click="level('levelThree')")>Too easy?</span>
+                    </div>
+                    <div class="levelThree" id="levelThree" data-ng-show="levelThree">
+                        <h3>What We Do At Level Three</h3>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <p>
+                            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>                        
+                        <span class="cta levelDown" data-ng-click="level('levelTwo')")>Too hard?</span> 
+                    </div>
+                </div>
+        	</section>
+        	
+        	<section id="about" class="container">
+        		<h2>About Switch Training</h2>
+        		<div class="sectionImage">
+        			<img src="http://www.asap-fitness.com/wp-content/uploads/fitness-pic2.png" />
+        		</div>
+        		<div class="description">
+        			<p>
+        				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        			</p>
+        		</div>
+        		
+        	</section>
+        	
+        	<section id="contact" class="container">
+        		<h2>Contact</h2>
+        		<div class="description">
+        			<p>
+        				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        			</p>
+        		</div>
+        	</section>
+        	
+        	<footer class="main" class="container">
+        	
+        	</footer>
+	
+        </div> 
         <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     </body>
 </html>
