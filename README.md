@@ -1,4 +1,2 @@
-boiler
+switch
 ======
-
-Standard files for static project
