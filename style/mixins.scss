@@ -1,0 +1,23 @@
+/*Breakpoints*/
+@mixin bp ($p){
+    @if ($p == 's'){
+        @media screen and (max-width:400px){@content;}
+    }
+    @else if ($p == 'm'){
+        @media screen and (max-width:850px){@content;}
+    }
+    @else if ($p == 'l'){
+        @media screen and (max-width:1000px){@content;}
+    }
+    @else if ($p == 'xl'){
+        @media screen and (max-width:1350px){@content;}
+    }
+}
+// Keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {@content;}
+  @-moz-keyframes #{$name} {@content;}
+  @-ms-keyframes #{$name} {@content;}
+  @keyframes #{$name} {@content;}
+//@content;
+}
