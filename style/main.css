@@ -482,7 +482,7 @@ nav.main {
       .services li {
         width: 100%;
         padding: 3% 0;
-        height: 290px;
+        min-height: 290px;
         float: none; } }
   .services:after {
     clear: both; }

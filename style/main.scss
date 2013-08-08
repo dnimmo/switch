@@ -461,7 +461,7 @@ nav.main{
 		@include bp(xs){
 			width: 100%;
 			padding: 3% 0;
-			height: 290px;
+			min-height: 290px;
 			float: none;
 		}
 	}
