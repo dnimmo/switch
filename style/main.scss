@@ -525,7 +525,7 @@ nav.main{
 		margin-top: 3px;
 		width: 96%;
 
-		@include bp(s){
+		@include bp(xs){
 			width: 92%;
 		}
 	}
@@ -534,8 +534,24 @@ nav.main{
 		float: none;
 		width: 96%;
 
-		@include bp(s){
+		@include bp(xs){
 			width: 100%;
 		}
+	}
+}
+
+.social{
+	text-align: center;
+	ul{
+		list-style: none;
+	}
+	li{
+		border-radius: 50px;
+		height: 75px;
+		width: 75px;
+		background-color: #e1140a;
+		float: left;
+		margin-left: 25px;
+		margin-top: 20px;
 	}
 }

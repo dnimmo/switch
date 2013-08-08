@@ -528,12 +528,25 @@ nav.main {
   float: none;
   margin-top: 3px;
   width: 96%; }
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 650px) {
     #contact .description {
       width: 92%; } }
 #contact h2 {
   float: none;
   width: 96%; }
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 650px) {
     #contact h2 {
       width: 100%; } }
+
+.social {
+  text-align: center; }
+  .social ul {
+    list-style: none; }
+  .social li {
+    border-radius: 50px;
+    height: 75px;
+    width: 75px;
+    background-color: #e1140a;
+    float: left;
+    margin-left: 25px;
+    margin-top: 20px; }
