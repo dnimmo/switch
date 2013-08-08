@@ -31,9 +31,13 @@ body {
 	p{
 		color:#999;
 		line-height:1.5em;
+
+		@include bp(xs){
+			font-size: 1.3rem;
+		}
 	}
 
-	@include bp(s){
+	@include bp(xs){
 		padding: 0;
 	}
 	
@@ -45,7 +49,7 @@ body {
 	margin: 0 auto;
 	min-height:100%;
 
-	@include bp(s){
+	@include bp(xs){
 		width: 100%;
 	}
 }
@@ -65,10 +69,13 @@ h2{
 	&:after{
 		clear: both;
 	}
-
-	@include bp(s){
-		width: 100%;
+	@include bp(m){
+		width: 96%;
 		float: none;
+		font-size: 3.2rem;
+	}
+	@include bp(xs){
+		width: 100%;
 		text-align: center;
 		font-size: 2.6rem;
 		padding: 4% 0;
@@ -82,22 +89,31 @@ h3{
 	letter-spacing:0.2em
 }
 
-span.cta{
-	margin:5% 0 5% 0;
-	font-size: 1.2em;
-	text-transform:uppercase;
-	letter-spacing:0.2em;
-	color:#000;
-	text-decoration:none;
-	border:1px solid #000;
-	padding:2% 4%;
-	transition: $transition;
+span{
+		&.cta{
+		margin:5% 0 5% 0;
+		font-size: 1.2em;
+		text-transform:uppercase;
+		letter-spacing:0.2em;
+		color:#000;
+		text-decoration:none;
+		border:1px solid #000;
+		padding:2% 4%;
+		display: block;
+		transition: $transition;
 
-	&:hover{
-		cursor: pointer;
-		background-color: #e1140a;
-		color: #fff;
-		border-color: #e1140a;
+		@include bp(s){
+			width: 90%;
+			padding: 2% 0;
+			margin: 5%;
+		}
+
+		&:hover{
+			cursor: pointer;
+			background-color: #e1140a;
+			color: #fff;
+			border-color: #e1140a;
+		}
 	}
 }
 
@@ -112,9 +128,9 @@ span.cta{
 		clear: both;
 	}
 
-	@include bp(s){
-		padding: 2%;
-		width: 96%;
+	@include bp(xs){
+		padding: 4%;
+		width: 92%;
 		float: none;
 	}
 
@@ -123,11 +139,10 @@ span.cta{
 header.main{
 	background:#e1140a;
 	color:#fff;
-	height: 20%;
-	min-height:200px;
+	padding-top: 50px;
+	min-height:326px;
 	min-width:200px;
-	padding:5%;
-	width:10%;
+	width:24%;
 	float:left;
 	text-align:center;
 	margin:0 3px 3px 0;
@@ -140,13 +155,17 @@ header.main{
 		animation: switch 5s;
 		-webkit-animation: switch 5s;
 		-moz-animation: switch 5s;
+
+		@include bp(m){
+			font-size: 2.7rem;
+		}
 	}
 	.logo1, .logo2{
 		font-size:10rem;
 		letter-spacing:-0.1rem; 
 		font-weight:bold;
 
-		@include bp(s){
+		@include bp(xs){
 			font-size: 5rem;
 		}
 	}
@@ -169,11 +188,16 @@ header.main{
 		-webkit-animation: fadeIn 3s;
 		animation: fadeIn 3s;
 
-		@include bp(s){
+		@include bp(m){
+			margin: 45px 0 10px;
+			font-size: 2.5rem;
+		}
+		@include bp(xs){
 			font-size: 3rem;
 			margin: 17px 0 10px 0;
 		}
 	}
+
 	.subHeading{
 		font-size: 1rem;
 		text-transform:uppercase;
@@ -182,22 +206,38 @@ header.main{
 		-webkit-animation: fadeIn 5s;
 		-animation: fadeIn 5s;
 
-		@include bp(s){
+		@include bp(m){
+			font-size: 1.7rem;
+		}
+
+		@include bp(xs){
 			font-size: 1.5rem;
 		}
 	}
 
-	@include bp(s){
+	@include bp(l){
+		height: 328px;
+	}
+	@include bp(m){
 		width: 100%;
-		padding: 0;
+		min-height: 0;
+		height: 310px;
+		padding-top: 10px;
+	}
+	@include bp(xs){
+		padding: 0 0 15px 0;
 		float: none;
+		height: 180px;
+		min-height: 0;
 	}
 }
-
+.navWrap{
+	width: 100%
+}
 nav.main{
-	float:left;
-	width:75.53%;
+	float: left;
 	background:#fff;
+	width: 75.53%;
 	margin:0 0 3px 0;
 	&:after{
 		clear: both;
@@ -209,7 +249,7 @@ nav.main{
 		font-family: 'PT Sans', sans-serif;
 		float:left;
 		max-height:100px;
-		padding:6% 5% 2.7% 5%;
+		padding: 63px 5% 26px 5%;
 		transition: $transition;
 		&:after{
 			clear: both;
@@ -219,16 +259,21 @@ nav.main{
 			color:#fff;
 			cursor:pointer;
 		}
-
-		@include bp(s){
+		@include bp(m){
+			width: 15%;
+			text-align: center;
+		}
+		@include bp(xs){
 			padding: 20px 0 20px 0;
 			width: 50%;
-			text-align: center;
 		}
 	}
 
-	@include bp(s){
+	@include bp(m){
 		width: 100%;
+	}
+
+	@include bp(xs){
 		float: none;
 		height: 115px;
 	}
@@ -236,9 +281,13 @@ nav.main{
 
 .title{
 	h2{
-		min-height:  20vh;
+		min-height:  145px;
 
-		@include bp(s){
+		@include bp(l){
+			min-height: 190px;
+		}
+
+		@include bp(m){
 			min-height: 0;
 		}
 	}
@@ -255,7 +304,10 @@ nav.main{
 	&:first-of-type{
 		padding-top: 60px;
 	}
-	@include bp(s){
+	&:last-of-type{
+		padding-bottom: 100px;
+	}
+	@include bp(xs){
 		margin: 0;
 	}
 }
@@ -271,8 +323,14 @@ nav.main{
 		width:100%;
 		opacity:0.7;
 	}
+	@include bp(xl){
+		width: 75.5%;
+		&+ .thumbMedium{
+				display: none;
+			}
 
-	@include bp(s){
+	}
+	@include bp(l){
 		display: none;
 	}
 }
@@ -280,17 +338,29 @@ nav.main{
 .thumbLarge {
 	width:99.8%;
 	height:225px;
+	clear: both;
 	background:black;
-	clear:both;
 	color:#fff;
 	overflow:hidden;
 	img{
 		margin:-200px 0 0 0; 
 		width:100%;
 		opacity:0.7;
+		@include bp(l){
+			margin: 0;
+		}
+		@include bp(xs){
+			width: 150%;
+		}
 	}
-	@include bp(s){
-		display: none;
+	@include bp(l){
+		float: left;
+		width: 75.5%;
+		height: 269px;
+		clear: none;
+	}
+	@include bp(m){
+		width: 100%;
 	}
 }
 
@@ -299,9 +369,22 @@ nav.main{
 		width: 56.7%;
 		float:right;
 		margin:0 0 3px 0;
-		min-height: 20vh;
+		min-height: 145px;
 
-		@include bp(s){
+		@include bp(l){
+			min-height: 190px;
+		}
+
+		@include bp(m){
+			width: 100%;
+			padding: 0;
+
+			p{
+				padding: 10px;
+			}
+		}
+
+		@include bp(xs){
 			float: none;
 			width: 96%;
 			padding: 2%;
@@ -315,7 +398,7 @@ nav.main{
 	p{
 		padding:5% 0; 
 
-		@include bp(s){
+		@include bp(xs){
 			padding: 22px 0;
 		}
 	}
@@ -327,11 +410,53 @@ nav.main{
 		padding:3%;
 		text-align:center;
 
-		&:last-of-type{
-			margin-right: 0;
+		h3{
+			@include bp(s){
+				margin-top: 20px;
+			}
 		}
 
+		p{
+			min-height: 140px;
+
+			@include bp(s){
+				padding: 20px;
+				min-height: 85px;
+			}
+		}
+
+
+		&:last-of-type{
+			margin-right: 0;
+			width: 27.1512%;
+
+			@media screen and (max-width:1405px){
+				width: 27.1%;
+			}
+			@media screen and(max-width:1275px){
+				width: 27.05%;
+			}
+			@media screen and(max-width:1155px){
+				width: 27.0%;
+			}
+			@media screen and (max-width:1060px){
+				width: 26.9%;
+			}
+			@include bp(s){
+				width: 100%;
+				padding: 3% 0;
+			}
+		}
+		@include bp(xl){
+			width: 27.19%;
+		}
 		@include bp(s){
+			width: 100%;
+			padding: 0;
+			min-height: 350px;
+		}
+
+		@include bp(xs){
 			width: 100%;
 			padding: 3% 0;
 			height: 290px;
@@ -348,7 +473,7 @@ nav.main{
 	display: block;
 	background-color: #fff;
 	clear: both;
-	padding: 3%;
+	padding: 4%;
 	-moz-animation: fadeIn 1s;
 	-webkit-animation: fadeIn 1s;
 	animation: fadeIn 1s;
@@ -356,19 +481,23 @@ nav.main{
 	h3{
 		margin: 0 0 2%;
 
-		@include bp(s){
+		@include bp(xs){
 			text-align: center;
 		}
 	}
-
 	.levelUp, .levelDown{
 		display: inline-block;
 		margin: 5% 0 0 0;
 
-		@include bp(s){
+		@include bp(xs){
 			display: block;
-			padding: 15px;
     		text-align: center;
+		    float: left;
+		    margin-left: 3px;
+		    padding: 3% 0;
+		    width: 48.5%;
+		    margin-bottom: 15px;
+
 		}
 	}
 }
@@ -381,21 +510,30 @@ nav.main{
 		width: 100%;
 	}	
 
-	@include bp(s){
+	@include bp(xs){
 		width: 100%;
 		float: none;
 		height: 100%;
 	}
 }
 
-footer{
+#contact{
+	.description{
+		float: none;
+		margin-top: 3px;
+		width: 96%;
 
-	&:before{
-		clear: both;
+		@include bp(s){
+			width: 92%;
+		}
 	}
 
-	height: 100px;
-	background-color: #e1140a;
-	margin-top: 60px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+	h2{
+		float: none;
+		width: 96%;
+
+		@include bp(s){
+			width: 100%;
+		}
+	}
 }

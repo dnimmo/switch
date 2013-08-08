@@ -1,16 +1,19 @@
 /*Breakpoints*/
 @mixin bp ($p){
-    @if ($p == 's'){
-        @media screen and (max-width:400px){@content;}
+    @if ($p == 'xs'){
+        @media screen and (max-width:650px){@content;}
+    }
+    @else if ($p == 's'){
+      @media screen and (max-width:920px){@content;}
     }
     @else if ($p == 'm'){
-        @media screen and (max-width:850px){@content;}
+        @media screen and (max-width:1100px){@content;}
     }
     @else if ($p == 'l'){
-        @media screen and (max-width:1000px){@content;}
+        @media screen and (max-width:1350px){@content;}
     }
     @else if ($p == 'xl'){
-        @media screen and (max-width:1350px){@content;}
+        @media screen and (max-width:1425px){@content;}
     }
 }
 // Keyframes mixin

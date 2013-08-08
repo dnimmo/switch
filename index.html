@@ -19,29 +19,31 @@
     </head>
     <body>
         <div id="wrapper">
+            <div class="navWrap">
         	<header class="main">
         		<div class="logo"><span class="logo1">/</span><span class="logo2">/</span></div>
         		<h1>Switch</h1>
         		<span class="subHeading">Training</span>
         	</header>
-        	<nav class="main" data-ng-controller="NavController">
-        		<ul>
-        			<li data-ng-click="nav('home')">Home</li>    
-        			<li data-ng-click="nav('services')">Services</li>
-        			<li data-ng-click="nav('about')">About</li>
-        			<li data-ng-click="nav('contact')">Contact</li>
-        		</ul>
-        	</nav>
-        	<div class="thumbMedium">
-        		<img src="http://images.sciencedaily.com/2011/02/110204130607-large.jpg" />
-        	</div>
-        	<div class="thumbMedium">
-        		<img src="http://mindfulmotionphysicaltherapy.com/wp-content/uploads/2012/05/1044720_com_replenishi.jpg" />      		
-        	</div>
-        	<div class="thumbLarge">
-        		<img src="http://arcsdsu.files.wordpress.com/2012/06/outdoor-bootcamp-photo5.jpg" />	
-        	</div>
         	
+                <nav class="main" data-ng-controller="NavController">
+            		<ul>
+            			<li data-ng-click="nav('home')">Home</li>    
+            			<li data-ng-click="nav('services')">Services</li>
+            			<li data-ng-click="nav('about')">About</li>
+            			<li data-ng-click="nav('contact')">Contact</li>
+            		</ul>
+            	</nav>
+            	<div class="thumbMedium">
+            		<img src="http://images.sciencedaily.com/2011/02/110204130607-large.jpg" />
+            	</div>
+            	<div class="thumbMedium">
+            		<img src="http://mindfulmotionphysicaltherapy.com/wp-content/uploads/2012/05/1044720_com_replenishi.jpg" />      		
+            	</div>
+            	<div class="thumbLarge">
+        	       	<img src="http://arcsdsu.files.wordpress.com/2012/06/outdoor-bootcamp-photo5.jpg" />	
+        	    </div>
+        	</div>
         	<section id="services" class="container" data-ng-controller="ServicesController">
                 <div class="titleContainer">
                     <div class="title">
@@ -92,6 +94,7 @@
                             orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         </p> 
                         <span class="cta levelUp" data-ng-click="level('levelTwo')")>Too easy?</span>
+                        <div class="clearBoth"></div>
                     </div>
                     <div class="levelTwo" id="levelTwo" data-ng-show="levelTwo">
                         <h3>What We Do At Level Two</h3>
@@ -109,6 +112,7 @@
                         </p> 
                         <span class="cta levelDown" data-ng-click="level('levelOne')")>Too hard?</span>
                         <span class="cta levelUp" data-ng-click="level('levelThree')")>Too easy?</span>
+                        <div class="clearBoth"></div>
                     </div>
                     <div class="levelThree" id="levelThree" data-ng-show="levelThree">
                         <h3>What We Do At Level Three</h3>
@@ -124,7 +128,8 @@
                         <p>
                             orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         </p>                        
-                        <span class="cta levelDown" data-ng-click="level('levelTwo')")>Too hard?</span> 
+                        <span class="cta levelDown" data-ng-click="level('levelTwo')")>Too hard?</span>
+                        <div class="clearBoth"></div>
                     </div>
                 </div>
         	</section>
