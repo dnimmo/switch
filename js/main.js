@@ -71,7 +71,7 @@ $(function(){
             if(pos <= 200){
                 $('nav .active').removeClass('active');
                 $('nav .homeNav').addClass('active');
-            } else if(sections[i] > pos && sections[i] < pos + 115){
+            } else if(sections[i] > pos && sections[i] < pos + (_height-115)){
                 $('nav .active').removeClass('active');
                 $('nav .' + i + 'Nav').addClass('active');
             }  

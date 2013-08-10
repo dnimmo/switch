@@ -260,8 +260,8 @@ nav.main{
 					padding: 35px 5% 26px 5%;
 				}
 				@include bp(xs){
-					padding: 20px 0 20px 0;
-					width: 50%;
+					padding: 20px 0 20px 0 !important;
+					width: 50% !important;
 				}
 			}
 		}
@@ -551,6 +551,7 @@ nav.main{
 		float: none;
 		margin-top: 3px;
 		width: 96%;
+		min-height: 300px;
 
 		@include bp(xs){
 			width: 92%;
