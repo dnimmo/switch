@@ -239,9 +239,19 @@ nav.main{
 	background:#fff;
 	width: 75.53%;
 	margin:0 0 3px 0;
+	transition: none;
 	&:after{
 		clear: both;
 	}
+		&.stuck{
+			position: fixed;
+			top: 0;
+			left: 0;
+			border-bottom: 3px solid #f1f1f1;
+			z-index: 999;
+			width: 100%;
+			transition: $transition;
+		}
 	li{
 		font-size:1.1em;
 		letter-spacing:0.1em;
@@ -250,11 +260,13 @@ nav.main{
 		float:left;
 		max-height:100px;
 		padding: 63px 5% 26px 5%;
+		color: #000;
+		text-decoration: none;
 		transition: $transition;
 		&:after{
 			clear: both;
 		}
-		&:hover{
+		&:hover, &.active{
 			background:#e1140a;
 			color:#fff;
 			cursor:pointer;
@@ -262,6 +274,7 @@ nav.main{
 		@include bp(m){
 			width: 15%;
 			text-align: center;
+			padding: 35px 5% 26px 5%;
 		}
 		@include bp(xs){
 			padding: 20px 0 20px 0;
@@ -301,11 +314,12 @@ nav.main{
 	padding-bottom: 30px;
 	clear: both;
 
-	&:first-of-type{
-		padding-top: 60px;
-	}
 	&:last-of-type{
-		padding-bottom: 100px;
+		padding-bottom: 350px;
+
+		@include bp(s){
+			padding-bottom: 30px;
+		}
 	}
 	@include bp(xs){
 		margin: 0;
@@ -554,4 +568,7 @@ nav.main{
 		margin-left: 25px;
 		margin-top: 20px;
 	}
+}
+#home{
+	padding-bottom: 30px;
 }
