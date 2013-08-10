@@ -254,6 +254,15 @@ nav.main{
 
 			li{
 				padding: 35px 5% 26px 5%;
+				@include bp(m){
+					width: 15%;
+					text-align: center;
+					padding: 35px 5% 26px 5%;
+				}
+				@include bp(xs){
+					padding: 20px 0 20px 0;
+					width: 50%;
+				}
 			}
 		}
 	li{

@@ -315,6 +315,15 @@ nav.main {
     transition: all 0.3s; }
     nav.main.stuck li {
       padding: 35px 5% 26px 5%; }
+      @media screen and (max-width: 1100px) {
+        nav.main.stuck li {
+          width: 15%;
+          text-align: center;
+          padding: 35px 5% 26px 5%; } }
+      @media screen and (max-width: 650px) {
+        nav.main.stuck li {
+          padding: 20px 0 20px 0;
+          width: 50%; } }
   nav.main li {
     font-size: 1.1em;
     letter-spacing: 0.1em;
