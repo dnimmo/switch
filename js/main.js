@@ -74,7 +74,6 @@ $(function(){
             } else if(sections[i] > pos && sections[i] < pos + 115){
                 $('nav .active').removeClass('active');
                 $('nav .' + i + 'Nav').addClass('active');
-                console.log(i);
             }  
         }
     });
