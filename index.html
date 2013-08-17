@@ -3,7 +3,7 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" data-ng-app> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" data-ng-app> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html data-ng-app><!--<![endif]-->
+<html data-ng-app data-ng-controller="SwitchController"><!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -26,7 +26,7 @@
             		<span class="subHeading">Training</span>
             	</header>
                 <div id="anchor"></div>
-                <nav class="main" data-ng-controller="NavController">
+                <nav class="main">
             		<ul>
                     <li class="logoNav" data-ng-click='nav("#home")'>//</li>  
                     <li class="homeNav active" data-ng-click='nav("#home")'>Home</li>
@@ -45,7 +45,7 @@
         	       	<img src="http://arcsdsu.files.wordpress.com/2012/06/outdoor-bootcamp-photo5.jpg" />
         	    </div>
         	</div>
-        	<section id="services" class="container" data-ng-controller="ServicesController">
+        	<section id="services" class="container">
                 <div class="titleContainer">
                     <div class="title">
                         <h2>Services</h2>
@@ -83,7 +83,7 @@
                   <span class="cta" data-ng-click="level('levelThree')">More</span>
         			</li>
         		</ul>
-        		<div id="levelsContainer">
+        		<div id="levelsContainer" data-ng-cloak>
                     <div class="levelOne levelDescription" id="levelOne" data-ng-show="levelOne">
                         <h3>What We Do At Level One</h3>
                         <p>

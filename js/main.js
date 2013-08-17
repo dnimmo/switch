@@ -1,14 +1,15 @@
-function NavController ($scope) {
+function SwitchController ($scope) {
 
-    $scope.nav = function(goTo){
-        scrollTo(goTo, 700);
-    };
-};
-
-function ServicesController ($scope) {
     $scope.levelOne = false;
     $scope.levelTwo = false;
     $scope.levelThree = false;
+    
+    $scope.nav = function(goTo){
+        $scope.levelOne = false;
+        $scope.levelTwo = false;
+        $scope.levelThree = false;
+        scrollTo(goTo, 700);
+    };
 
     $scope.level = function(level){
         scrollTo('#levelsContainer', 700);

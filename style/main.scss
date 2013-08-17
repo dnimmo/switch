@@ -42,16 +42,7 @@ body {
 	}
 	
 }
-.border{
-  width: 0.3%;
-  height: 100%;
-  background-color: #f1f1f1;
-  float: right;
-}
-.nonBorder{
-   float: left;
-  height: 100%;
-}
+
 #wrapper{
 	width: 76%;
 	max-width: 1440px;
@@ -65,7 +56,7 @@ body {
 
 h2{
 	
-	font-size:4rem;
+	font-size:3rem;
 	width:35%;
 	padding:2%;
 	color:#fff;
@@ -79,15 +70,13 @@ h2{
 		clear: both;
 	}
 	@include bp(m){
-		width: 96%;
+		width: 100%;
 		float: none;
 		font-size: 3.2rem;
 	}
 	@include bp(xs){
-		width: 100%;
-		text-agn: center;
 		font-size: 2.6rem;
-		padding: 4% 0;
+		padding: 4%;
 	}
 }
 
@@ -139,7 +128,7 @@ span{
 
 	@include bp(xs){
 		padding: 4%;
-		width: 92%;
+		width: 100%;
 		float: none;
 	}
 
@@ -148,7 +137,7 @@ span{
 header.main{
 	background:$red;
 	color:#fff;
-	padding-top: 50px;
+	padding-top: 25px;
 	min-height:326px;
 	min-width:200px;
 	width:24%;
@@ -224,6 +213,10 @@ header.main{
 		}
 	}
 
+	@include bp(xl){
+		height: 325px;
+	}
+
 	@include bp(l){
 		height: 328px;
 	}
@@ -234,10 +227,10 @@ header.main{
 		padding-top: 10px;
 	}
 	@include bp(xs){
-		padding: 0 0 15px 0;
-		float: none;
-		height: 180px;
-		min-height: 0;
+	    float: none;
+	    height: 230px;
+	    min-height: 0;
+	    padding: 20px 0 15px;
 	}
 }
 .navWrap{
@@ -259,30 +252,30 @@ nav.main{
 			position: fixed;
 			top: 0;
 			left: 0;
-			border-bottom: 0.3% solid #f1f1f1;
+			border-bottom: 3px solid #f1f1f1;
 			z-index: 999;
 			width: 100%;
 			transition: $transition;
-      .logoNav{
-         display: block; 
-         background-color: $red;
-         font-weight: bold;
-        color: #fff;
-      }
+		      .logoNav{
+		         display: block; 
+		         background-color: $red;
+		         font-weight: bold;
+		        color: #fff;
+		      }
 			li{
 				padding: 35px 5% 26px 5%;
 				@include bp(m){
-					width: 15%;
+					width: 20%;
 					text-align: center;
 					padding: 35px 5% 26px 5%;
-          
-          &.logoNav{
-             display: none; 
-          }
 				}
 				@include bp(xs){
-					padding: 20px 0 20px 0 !important;
-					width: 50% !important;
+					padding: 20px 0 20px 0;
+					width: 50%;
+
+					&.logoNav{
+						display: none;
+					}
 				}
 			}
 		}
@@ -311,7 +304,7 @@ nav.main{
 			cursor:pointer;
 		}
 		@include bp(m){
-			width: 15%;
+			width: 25%;
 			text-align: center;
 			padding: 35px 5% 26px 5%;
 		}
@@ -368,16 +361,21 @@ nav.main{
 .thumbMedium{
 	width: 37.65%;
 	float:left;
-	height: 266px;
-	background:black;
+	height: 222px;
+	background-color: #000;
 	margin:0 0.3% 0 0;
 	overflow:hidden;
+
+	&+.thumbMedium{
+		margin: 0;
+	}
 	img{
 		width:100%;
 		opacity:0.7;
 	}
 	@include bp(xl){
-		width: 75.5%;
+		width: 75.7%;
+		margin: 0;
 		&+ .thumbMedium{
 				display: none;
 			}
@@ -389,7 +387,7 @@ nav.main{
 }
 
 .thumbLarge {
-	width:99.8%;
+	width:100%;
 	height:225px;
 	clear: both;
 	background:black;
@@ -409,7 +407,6 @@ nav.main{
 	@include bp(l){
 		float: left;
 		width: 75.5%;
-		height: 269px;
 		clear: none;
 	}
 	@include bp(m){
@@ -419,22 +416,22 @@ nav.main{
 
 #services{
   h2{
-     width: 29.19%; 
+     width: 33.1%; 
+     min-height: 195px;
      @include bp(m){
-       width: 96%; 
+       width: 100%; 
+       min-height: 0;
     }
-    @include bp(s){
-       width: 92%; 
-       padding-left: 4%;
-       padding-right: 4%;
+    @include bp(s){ 
+       padding: 4%;
     }
   }
   
 	.description{
-		width: 62.55%;
+		width: 66.5%;
 		float:right;
 		margin:0 0 0.3% 0;
-		min-height: 145px;
+		min-height: 195px;
 
 		@include bp(l){
 			min-height: 190px;
@@ -451,7 +448,7 @@ nav.main{
 
 		@include bp(xs){
 			float: none;
-			width: 96%;
+			width: 100%;
 			padding: 2%;
 		}
 	}
@@ -470,13 +467,24 @@ nav.main{
 	li{
 		background:#fff;
 		margin:0 0.3% 0.3% 0;
-		width: 33%;
+		width: 33.1%;
 		float:left;
 		text-align:center;
-    transition: $transition;
-    cursor: pointer;    
+	    transition: $transition;
+	    cursor: pointer;    
 		padding:3%;
+
+		&:last-of-type{
+			width: 33.2%;
+			margin-right: 0;
+
+			@include bp(s){
+				width: 100%;
+				padding: 3% 0;
+			}
+		}
     
+
     &[data-active='true']{
         background-color: $red;
         p{
@@ -531,33 +539,11 @@ nav.main{
         }
      }
 
-		&:last-of-type{
-			margin-right: 0;
-			width: 33%;
-
-			@media screen and (max-width:1405px){
-				width: 27.1%;
-			}
-			@media screen and(max-width:1275px){
-				width: 27.05%;
-			}
-			@media screen and(max-width:1155px){
-				width: 27.0%;
-			}
-			@media screen and (max-width:1060px){
-				width: 26.9%;
-			}
-			@include bp(s){
-				width: 100%;
-				padding: 3% 0;
-			}
-		}
-		@include bp(xl){
-			width: 27.19%;
-		}
 		@include bp(m){
 			min-height: 320px;
+    		width: 33%;
 		}
+
 		@include bp(s){
 			width: 100%;
 			padding: 0;
@@ -623,15 +609,23 @@ nav.main{
 	}
 }
 
+#about{
+	.description{
+		@include bp(m){
+			width: 100%;
+			margin-top: 0.4%;
+		}
+	}
+}
 
 .sectionImage{ 
-	width: 60.7%;
+	width: 64.7%;
 	float:right;
 	img{
 		width: 100%;
 	}	
 
-	@include bp(xs){
+	@include bp(m){
 		width: 100%;
 		float: none;
 		height: 100%;
@@ -640,21 +634,11 @@ nav.main{
 
 #contact{
 	.description{
-    width: 56.79%;
-    
-		@include bp(xs){
-			width: 92%;
-		}
-	}
+		width: 64.7%;
 
-	h2{
-		@include bp(xs){
+		@include bp(m){
 			width: 100%;
-       @include bp(s){
-       width: 92%; 
-       padding-left: 4%;
-       padding-right: 4%;
-      }
+			border-top: 0.4%;
 		}
 	}
 }
