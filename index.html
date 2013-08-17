@@ -3,7 +3,7 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" data-ng-app> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" data-ng-app> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html manifest="switch.appcache" data-ng-app><!--<![endif]-->
+<html data-ng-app><!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,11 +28,12 @@
                 <div id="anchor"></div>
                 <nav class="main" data-ng-controller="NavController">
             		<ul>
-                        <li class="homeNav active" data-ng-click='nav("#home")'>Home</li>
+                    <li class="logoNav" data-ng-click='nav("#home")'>//</li>  
+                    <li class="homeNav active" data-ng-click='nav("#home")'>Home</li>
             		    <li class="servicesNav" data-ng-click='nav("#services")'>Services</li>
             		    <li class="aboutNav" data-ng-click='nav("#about")'>About</li>
-            	   	    <li class="contactNav" data-ng-click='nav("#contact")'>Contact</li>
-                    </ul>
+            	      <li class="contactNav" data-ng-click='nav("#contact")'>Contact</li>
+                 </ul>
             	</nav>
             	<div class="thumbMedium">
             		<img src="http://images.sciencedaily.com/2011/02/110204130607-large.jpg" />
@@ -40,7 +41,6 @@
             	<div class="thumbMedium">
             		<img src="http://mindfulmotionphysicaltherapy.com/wp-content/uploads/2012/05/1044720_com_replenishi.jpg" />	
             	</div>
-                <div class="clearBoth"></div>
             	<div class="thumbLarge">
         	       	<img src="http://arcsdsu.files.wordpress.com/2012/06/outdoor-bootcamp-photo5.jpg" />
         	    </div>
@@ -57,31 +57,31 @@
             		</div>
                 </div>
 
-        		<ul class="services">
-        			<li>
+            <ul class="services">
+              <li data-active="{{levelOne}}" data-ng-click="level('levelOne')">
         				<h3>Level one</h3>
         				<p>
         					orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         				</p>
-        				<span class="cta" data-ng-click="level('levelOne')">More</a>
+        				<span class="cta" data-ng-click="level('levelOne')">More</span>
         			</li>
-        			<li>
+        			<li data-active="{{levelTwo}}" data-ng-click="level('levelTwo')">
         				<h3>Level two</h3>
         				<p>
         					orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         				</p>
-        				<span class="cta" data-ng-click="level('levelTwo')">More</a>
+        				<span class="cta" data-ng-click="level('levelTwo')">More</span>
         			</li>
-        			<li>
+        			<li data-active="{{levelThree}}" data-ng-click="level('levelThree')">
         				<h3>Level Three</h3>
         				<p>
         					orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         				</p>
-        				<span class="cta" data-ng-click="level('levelThree')">More</a>
+        				<span class="cta" data-ng-click="level('levelThree')">More</span>
         			</li>
         		</ul>
         		<div id="levelsContainer">
-                    <div class="levelOne" id="levelOne" data-ng-show="levelOne">
+                    <div class="levelOne levelDescription" id="levelOne" data-ng-show="levelOne">
                         <h3>What We Do At Level One</h3>
                         <p>
                             orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -98,7 +98,7 @@
                         <span class="cta levelUp" data-ng-click="level('levelTwo')")>Too easy?</span>
                         <div class="clearBoth"></div>
                     </div>
-                    <div class="levelTwo" id="levelTwo" data-ng-show="levelTwo">
+                    <div class="levelTwo levelDescription" id="levelTwo" data-ng-show="levelTwo">
                         <h3>What We Do At Level Two</h3>
                         <p>
                             orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -116,7 +116,7 @@
                         <span class="cta levelUp" data-ng-click="level('levelThree')")>Too easy?</span>
                         <div class="clearBoth"></div>
                     </div>
-                    <div class="levelThree" id="levelThree" data-ng-show="levelThree">
+                    <div class="levelThree levelDescription" id="levelThree" data-ng-show="levelThree">
                         <h3>What We Do At Level Three</h3>
                         <p>
                             orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -175,7 +175,7 @@
             
         </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

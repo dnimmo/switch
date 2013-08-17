@@ -140,7 +140,7 @@ body {
       padding: 0; } }
 
 #wrapper {
-  width: 90%;
+  width: 76%;
   max-width: 1440px;
   margin: 0 auto;
   min-height: 100%; }
@@ -168,7 +168,7 @@ h2 {
   @media screen and (max-width: 650px) {
     h2 {
       width: 100%;
-      text-align: center;
+      text-agn: center;
       font-size: 2.6rem;
       padding: 4% 0; } }
 
@@ -303,6 +303,8 @@ nav.main {
   width: 75.53%;
   margin: 0 0 3px 0;
   transition: none; }
+  nav.main .logoNav {
+    display: none; }
   nav.main:after {
     clear: both; }
   nav.main.stuck {
@@ -313,13 +315,20 @@ nav.main {
     z-index: 999;
     width: 100%;
     transition: all 0.3s; }
+    nav.main.stuck .logoNav {
+      display: block;
+      background-color: #e1140a;
+      font-weight: bold;
+      color: #fff; }
     nav.main.stuck li {
       padding: 35px 5% 26px 5%; }
       @media screen and (max-width: 1100px) {
         nav.main.stuck li {
           width: 15%;
           text-align: center;
-          padding: 35px 5% 26px 5%; } }
+          padding: 35px 5% 26px 5%; }
+          nav.main.stuck li.logoNav {
+            display: none; } }
       @media screen and (max-width: 650px) {
         nav.main.stuck li {
           padding: 20px 0 20px 0 !important;
@@ -337,8 +346,11 @@ nav.main {
     transition: all 0.3s; }
     nav.main li:after {
       clear: both; }
+    nav.main li:hover {
+      background-color: #f53229; }
+    nav.main li.active {
+      background-color: #e1140a; }
     nav.main li:hover, nav.main li.active {
-      background: #e1140a;
       color: #fff;
       cursor: pointer; }
     @media screen and (max-width: 1100px) {
@@ -371,7 +383,7 @@ nav.main {
   clear: both; }
 
 .container {
-  padding-top: 30px;
+  padding-top: 180px;
   padding-bottom: 30px;
   clear: both; }
   .container:last-of-type {
@@ -429,8 +441,18 @@ nav.main {
     .thumbLarge {
       width: 100%; } }
 
+#services h2 {
+  width: 29.19%; }
+  @media screen and (max-width: 1100px) {
+    #services h2 {
+      width: 96%; } }
+  @media screen and (max-width: 920px) {
+    #services h2 {
+      width: 92%;
+      padding-left: 4%;
+      padding-right: 4%; } }
 #services .description {
-  width: 56.7%;
+  width: 62.55%;
   float: right;
   margin: 0 0 3px 0;
   min-height: 145px; }
@@ -463,7 +485,24 @@ nav.main {
     width: 27.19%;
     float: left;
     padding: 3%;
-    text-align: center; }
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer; }
+    .services li[data-active='true'] {
+      background-color: #e1140a; }
+      .services li[data-active='true'] p {
+        color: #fff; }
+      .services li[data-active='true'] .cta {
+        color: #e1140a;
+        border-color: #e1140a; }
+        .services li[data-active='true'] .cta:hover {
+          cursor: default; }
+      .services li[data-active='true'] h3 {
+        color: #fff; }
+      .services li[data-active='true']:hover {
+        cursor: default; }
+        .services li[data-active='true']:hover .cta {
+          color: #e1140a; }
     @media screen and (max-width: 920px) {
       .services li h3 {
         margin-top: 20px; } }
@@ -473,9 +512,13 @@ nav.main {
         .services li p {
           padding: 20px;
           min-height: 85px; } }
+    .services li:hover .cta {
+      cursor: pointer;
+      color: #fff;
+      background-color: #e1140a; }
     .services li:last-of-type {
       margin-right: 0;
-      width: 27.1512%; }
+      width: 27.2%; }
       @media screen and (max-width: 1405px) {
         .services li:last-of-type {
           width: 27.1%; } }
@@ -511,24 +554,34 @@ nav.main {
   .services:after {
     clear: both; }
 
-.levelOne, .levelTwo, .levelThree {
+.levelDescription {
   display: block;
-  background-color: #fff;
+  color: #fff;
+  background-color: #e1140a;
   clear: both;
   padding: 4%;
   -moz-animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s; }
-  .levelOne h3, .levelTwo h3, .levelThree h3 {
+  .levelDescription h3 {
     margin: 0 0 2%; }
     @media screen and (max-width: 650px) {
-      .levelOne h3, .levelTwo h3, .levelThree h3 {
+      .levelDescription h3 {
         text-align: center; } }
-  .levelOne .levelUp, .levelOne .levelDown, .levelTwo .levelUp, .levelTwo .levelDown, .levelThree .levelUp, .levelThree .levelDown {
+  .levelDescription p {
+    color: #fff; }
+  .levelDescription .cta {
+    background-color: #fff;
+    color: #000;
+    padding: 1% 2%;
+    border: 2px solid #f53229; }
+    .levelDescription .cta:hover {
+      background-color: #f53229; }
+  .levelDescription .levelUp, .levelDescription .levelDown {
     display: inline-block;
     margin: 5% 0 0 0; }
     @media screen and (max-width: 650px) {
-      .levelOne .levelUp, .levelOne .levelDown, .levelTwo .levelUp, .levelTwo .levelDown, .levelThree .levelUp, .levelThree .levelDown {
+      .levelDescription .levelUp, .levelDescription .levelDown {
         display: block;
         text-align: center;
         float: left;
@@ -562,6 +615,11 @@ nav.main {
   @media screen and (max-width: 650px) {
     #contact h2 {
       width: 100%; } }
+    @media screen and (max-width: 650px) and (max-width: 920px) {
+      #contact h2 {
+        width: 92%;
+        padding-left: 4%;
+        padding-right: 4%; } }
 
 .social {
   text-align: center; }

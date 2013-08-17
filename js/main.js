@@ -6,7 +6,7 @@ function NavController ($scope) {
 };
 
 function ServicesController ($scope) {
-    $scope.levelOne = true;
+    $scope.levelOne = false;
     $scope.levelTwo = false;
     $scope.levelThree = false;
 
@@ -23,7 +23,7 @@ function ServicesController ($scope) {
         } else {
             $scope.levelOne = false;
             $scope.levelTwo = false;
-            $scope.levelThree = true;      
+            $scope.levelThree = true;
         }
     };
 };
@@ -31,7 +31,7 @@ function ServicesController ($scope) {
 /*jQuery*/
 var scrollTo = function(element, speed){
         distance = $(element).offset();
-    $("html, body").animate({ scrollTop: distance.top-85 }, speed || 300);
+    $("html, body").animate({ scrollTop: distance.top-70 }, speed || 300);
 }
 
 var $window = $(window),
@@ -41,7 +41,7 @@ var $window = $(window),
 
 $window.scroll(function() {
     var window_top = $window.scrollTop()-$mainMenuBarHeight;
-    var div_top = $mainMenuBarAnchor.offset().top-85;
+    var div_top = $mainMenuBarAnchor.offset().top+85;
     if (window_top > div_top) {
         // Make the nav sticky
         $mainMenuBar.addClass('stuck');
@@ -71,10 +71,16 @@ $(function(){
             if(pos <= 200){
                 $('nav .active').removeClass('active');
                 $('nav .homeNav').addClass('active');
-            } else if(sections[i] > pos && sections[i] < pos + (_height-115)){
+            } else if(pos >200 && pos <= 680){
                 $('nav .active').removeClass('active');
-                $('nav .' + i + 'Nav').addClass('active');
-            }  
-        }
-    });
+                $('nav .servicesNav').addClass('active');
+            }  else if(pos > 680 && pos <=1500) {
+                $('nav .active').removeClass('active');
+                $('nav .aboutNav').addClass('active');
+            } else if (pos > 1500 && pos <= 2700){
+                $('nav .active').removeClass('active');
+                $('nav .contactNav').addClass('active');              
+            }
+    };
+});
 });

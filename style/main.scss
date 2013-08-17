@@ -44,7 +44,7 @@ body {
 }
 
 #wrapper{
-	width: 90%;
+	width: 76%;
 	max-width: 1440px;
 	margin: 0 auto;
 	min-height:100%;
@@ -60,7 +60,7 @@ h2{
 	width:35%;
 	padding:2%;
 	color:#fff;
-	background: #e1140a;
+	background: $red;
 	text-transform:uppercase;
 	letter-spacing:0.2em;
 	margin:0 3px 3px 0;
@@ -76,7 +76,7 @@ h2{
 	}
 	@include bp(xs){
 		width: 100%;
-		text-align: center;
+		text-agn: center;
 		font-size: 2.6rem;
 		padding: 4% 0;
 	}
@@ -110,9 +110,9 @@ span{
 
 		&:hover{
 			cursor: pointer;
-			background-color: #e1140a;
+			background-color: $red;
 			color: #fff;
-			border-color: #e1140a;
+			border-color: $red;
 		}
 	}
 }
@@ -137,7 +137,7 @@ span{
 }
 
 header.main{
-	background:#e1140a;
+	background:$red;
 	color:#fff;
 	padding-top: 50px;
 	min-height:326px;
@@ -240,6 +240,9 @@ nav.main{
 	width: 75.53%;
 	margin:0 0 3px 0;
 	transition: none;
+  .logoNav{
+    display: none;  
+  }
 	&:after{
 		clear: both;
 	}
@@ -251,13 +254,22 @@ nav.main{
 			z-index: 999;
 			width: 100%;
 			transition: $transition;
-
+      .logoNav{
+         display: block; 
+         background-color: $red;
+         font-weight: bold;
+        color: #fff;
+      }
 			li{
 				padding: 35px 5% 26px 5%;
 				@include bp(m){
 					width: 15%;
 					text-align: center;
 					padding: 35px 5% 26px 5%;
+          
+          &.logoNav{
+             display: none; 
+          }
 				}
 				@include bp(xs){
 					padding: 20px 0 20px 0 !important;
@@ -279,8 +291,13 @@ nav.main{
 		&:after{
 			clear: both;
 		}
+    &:hover{
+      background-color:lighten($red, 10%);      
+    }
+    &.active{
+      background-color:$red;      
+    }
 		&:hover, &.active{
-			background:#e1140a;
 			color:#fff;
 			cursor:pointer;
 		}
@@ -323,7 +340,7 @@ nav.main{
 	clear: both;
 }
 .container{
-	padding-top: 30px;
+	padding-top: 180px;
 	padding-bottom: 30px;
 	clear: both;
 
@@ -392,8 +409,20 @@ nav.main{
 }
 
 #services{
+  h2{
+     width: 29.19%; 
+     @include bp(m){
+       width: 96%; 
+    }
+    @include bp(s){
+       width: 92%; 
+       padding-left: 4%;
+       padding-right: 4%;
+    }
+  }
+  
 	.description{
-		width: 56.7%;
+		width: 62.55%;
 		float:right;
 		margin:0 0 3px 0;
 		min-height: 145px;
@@ -436,7 +465,32 @@ nav.main{
 		float:left;
 		padding:3%;
 		text-align:center;
-
+    transition: $transition;
+    cursor: pointer;
+    &[data-active='true']{
+        background-color: $red;
+        p{
+            color: #fff;
+        }
+        .cta{
+          color: $red;
+          border-color: $red;
+          &:hover{
+            cursor: default;
+          }
+        }
+      
+        h3{
+          color: #fff;
+        }
+        &:hover{
+          cursor: default;
+          .cta{
+              color: $red; 
+            }
+        }
+    }
+    
 		h3{
 			@include bp(s){
 				margin-top: 20px;
@@ -451,11 +505,18 @@ nav.main{
 				min-height: 85px;
 			}
 		}
-
+    
+    &:hover{
+        .cta{
+          cursor: pointer;
+          color: #fff;
+          background-color: $red;
+        }
+     }
 
 		&:last-of-type{
 			margin-right: 0;
-			width: 27.1512%;
+			width: 27.2%;
 
 			@media screen and (max-width:1405px){
 				width: 27.1%;
@@ -498,9 +559,10 @@ nav.main{
 	}
 }
 
-.levelOne, .levelTwo, .levelThree{
+.levelDescription{
 	display: block;
-	background-color: #fff;
+  color: #fff;
+	background-color: $red;
 	clear: both;
 	padding: 4%;
 	-moz-animation: fadeIn 1s;
@@ -514,6 +576,19 @@ nav.main{
 			text-align: center;
 		}
 	}
+  p{
+     color: #fff; 
+  }
+  .cta{
+     background-color: #fff;
+     color: #000;
+     padding: 1% 2%;
+     border: 2px solid lighten($red, 10%);
+    
+     &:hover{
+         background-color: lighten($red, 10%); 
+      }
+  }
 	.levelUp, .levelDown{
 		display: inline-block;
 		margin: 5% 0 0 0;
@@ -564,6 +639,11 @@ nav.main{
 
 		@include bp(xs){
 			width: 100%;
+       @include bp(s){
+       width: 92%; 
+       padding-left: 4%;
+       padding-right: 4%;
+      }
 		}
 	}
 }
@@ -577,7 +657,7 @@ nav.main{
 		border-radius: 50px;
 		height: 75px;
 		width: 75px;
-		background-color: #e1140a;
+		background-color: $red;
 		float: left;
 		margin-left: 25px;
 		margin-top: 20px;
