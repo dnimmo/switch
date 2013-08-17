@@ -42,7 +42,16 @@ body {
 	}
 	
 }
-
+.border{
+  width: 0.3%;
+  height: 100%;
+  background-color: #f1f1f1;
+  float: right;
+}
+.nonBorder{
+   float: left;
+  height: 100%;
+}
 #wrapper{
 	width: 76%;
 	max-width: 1440px;
@@ -63,7 +72,7 @@ h2{
 	background: $red;
 	text-transform:uppercase;
 	letter-spacing:0.2em;
-	margin:0 3px 3px 0;
+	margin:0 0.3% 0.3% 0;
 	float:left;
 
 	&:after{
@@ -145,7 +154,7 @@ header.main{
 	width:24%;
 	float:left;
 	text-align:center;
-	margin:0 3px 3px 0;
+	margin:0 0.3% 0.3% 0;
 	font-family: 'PT Sans', sans-serif;
 
 	&:after{
@@ -237,8 +246,8 @@ header.main{
 nav.main{
 	float: left;
 	background:#fff;
-	width: 75.53%;
-	margin:0 0 3px 0;
+	width: 75.7%;
+	margin:0 0 0.3% 0;
 	transition: none;
   .logoNav{
     display: none;  
@@ -250,7 +259,7 @@ nav.main{
 			position: fixed;
 			top: 0;
 			left: 0;
-			border-bottom: 3px solid #f1f1f1;
+			border-bottom: 0.3% solid #f1f1f1;
 			z-index: 999;
 			width: 100%;
 			transition: $transition;
@@ -361,7 +370,7 @@ nav.main{
 	float:left;
 	height: 266px;
 	background:black;
-	margin:0 3px 0 0;
+	margin:0 0.3% 0 0;
 	overflow:hidden;
 	img{
 		width:100%;
@@ -424,7 +433,7 @@ nav.main{
 	.description{
 		width: 62.55%;
 		float:right;
-		margin:0 0 3px 0;
+		margin:0 0 0.3% 0;
 		min-height: 145px;
 
 		@include bp(l){
@@ -460,13 +469,14 @@ nav.main{
 	}
 	li{
 		background:#fff;
-		margin:0 3px 3px 0;
-		width: 27.19%;
+		margin:0 0.3% 0.3% 0;
+		width: 33%;
 		float:left;
-		padding:3%;
 		text-align:center;
     transition: $transition;
-    cursor: pointer;
+    cursor: pointer;    
+		padding:3%;
+    
     &[data-active='true']{
         background-color: $red;
         p{
@@ -490,6 +500,13 @@ nav.main{
             }
         }
     }
+    
+    &:after{
+         content: "";
+         height: 100%;
+         width: 0.3%;
+         background-color: #f1f1f1;
+      }
     
 		h3{
 			@include bp(s){
@@ -516,7 +533,7 @@ nav.main{
 
 		&:last-of-type{
 			margin-right: 0;
-			width: 27.2%;
+			width: 33%;
 
 			@media screen and (max-width:1405px){
 				width: 27.1%;
@@ -597,7 +614,7 @@ nav.main{
 			display: block;
     		text-align: center;
 		    float: left;
-		    margin-left: 3px;
+		    margin-left: 0.3%;
 		    padding: 3% 0;
 		    width: 48.5%;
 		    margin-bottom: 15px;
@@ -623,20 +640,14 @@ nav.main{
 
 #contact{
 	.description{
-		float: none;
-		margin-top: 3px;
-		width: 96%;
-		min-height: 300px;
-
+    width: 56.79%;
+    
 		@include bp(xs){
 			width: 92%;
 		}
 	}
 
 	h2{
-		float: none;
-		width: 96%;
-
 		@include bp(xs){
 			width: 100%;
        @include bp(s){
