@@ -47,6 +47,10 @@
 	background-color: $red;
 	color: #fff;
 }
+@font-face{
+	font-family: plusplus;
+	src: url('fonts/plusplus-webfont.tff');
+}
 body {
 	background:#f1f1f1;
 	padding:7% 0 5% 0;
@@ -715,6 +719,27 @@ nav.main{
 	.description{
 		width: 64.7%;
 
+		p{
+			margin-bottom: 30px;
+		}
+		ul{
+			line-height: 1.5rem;
+		
+			li{
+				color: #999;
+
+				a{
+					color: $red;
+					text-decoration: none;
+					transition: $transition;
+
+					&:hover{
+						color: lighten($red, 25%);
+					}
+				}
+			}
+		}
+
 		@include bp(m){
 			width: 100%;
 			border-top: 0.4%;
@@ -745,10 +770,14 @@ footer{
 		margin-left: 20%;
 		margin-top: 20px;
 
+		a{
+			font-family: plusplus;
+		}
+
 		&:first-of-type{
 		}
 
-		img{
+		p{
 			width: 100%;
 			height: 100%;
 			opacity: 0.7;
