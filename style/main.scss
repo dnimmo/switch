@@ -48,8 +48,9 @@
 	color: #fff;
 }
 @font-face{
-	font-family: plusplus;
-	src: url('fonts/plusplus-webfont.tff');
+	font-family: 'plusplus';
+	src: url('fonts/plusplus-webfont.tff'), url('fonts/plusplus-webfont.svg'), 
+    url('fonts/plusplus-webfont.eot'), url('fonts/plusplus-webfont.woff'), url('fonts/plusplus-webfont.otf');
 }
 body {
 	background:#f1f1f1;
@@ -407,9 +408,10 @@ nav.main{
 		@include bp(s){
 			padding-bottom: 30px;
 		}
-	}
-	@include bp(xs){
-		margin: 0;
+    @include bp(xs){
+      margin: 0;
+      padding-bottom: 0;
+    }   
 	}
 }
 
@@ -718,6 +720,7 @@ nav.main{
 #contact{
 	.description{
 		width: 64.7%;
+    float: right;
 
 		p{
 			margin-bottom: 30px;
@@ -732,11 +735,20 @@ nav.main{
 					color: $red;
 					text-decoration: none;
 					transition: $transition;
+          
+          @include bp(xs){
+             display: block; 
+             margin-bottom: 15px;
+          }
 
 					&:hover{
 						color: lighten($red, 25%);
 					}
 				}
+        
+        @include bp(xs){
+           font-size: 1.3rem; 
+        }
 			}
 		}
 
@@ -757,36 +769,64 @@ footer{
 }
 .social{
 	margin: 0 auto;
-	width: 100%;
+	width: 35%;
 	text-align: center;
+  float: left; 
+
+  @include bp(m){
+    width: 100%; 
+    margin-top: 0.4%;
+  }
+  
 	ul{
 		list-style: none;
 	}
 	li{
-		border-radius: 50px;
-		height: 64px;
-		width: 64px;
 		float: left;
-		margin-left: 20%;
-		margin-top: 20px;
-
+    width: 32.5%;
+    margin-left: 1.2%;
+    
+    @include bp(m){
+      margin-left: 0; 
+      width: 33.3%;
+    }
+    
 		a{
-			font-family: plusplus;
+			font-family: 'plusplus';
+      text-decoration: none;
+      font-size: 3.2rem;
+      color: #fff;
+      height: 95px;
+      display: block;
+      width: 100%;
+      float: left;
+      background-color: $red;
+      line-height: 6rem;
+      transition: $transition;
+      
+       &.facebook{
+         &:hover{
+             background-color: #3B5998; 
+          }
+      }
+      
+      &.twitter{
+         &:hover{
+             background-color: #00AFEF;
+          }
+      }
+
+      &.email{
+         &:hover{
+            background-color: #fff;
+            color: $red;
+          }
+      }      
+
 		}
 
 		&:first-of-type{
-		}
-
-		p{
-			width: 100%;
-			height: 100%;
-			opacity: 0.7;
-			transition: $transition;
-
-			&:hover{
-				opacity: 1;
-				cursor: pointer;
-			}
+        margin-left: 0;
 		}
 	}
 }
